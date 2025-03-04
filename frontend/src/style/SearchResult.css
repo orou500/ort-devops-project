@@ -1,0 +1,15 @@
+.search-result {
+    padding: 10px 20px;
+    background-color: var(--background-color-navbar);
+    color: var(--primary-text-color);
+  }
+  
+  .search-result:hover {
+    background-color: var(--background-color);
+    color: var(--foreground-color);
+  }
+
+  .admin-status {
+    display: block !important;
+    width: auto !important;
+  }

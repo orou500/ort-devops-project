@@ -1,0 +1,44 @@
+services:
+  jenkins:
+    build: .
+    privileged: true
+    user: root
+    container_name: jenkins
+    ports:
+      - "8081:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  npm-node-agent:
+    build: ./inbound-agent
+    container_name: npm-node-agent
+    working_dir: /home/jenkins
+    environment:
+      - JENKINS_URL=http://jenkins:8081
+      - JENKINS_SECRET={JENKINS_SECRET}
+      - JENKINS_AGENT_NAME=npm-node-agent
+
+  docker-agent:
+    build: ./docker-in-docker
+    container_name: docker-agent
+    working_dir: /home/jenkins
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - JENKINS_URL=http://jenkins:8081
+      - JENKINS_SECRET={JENKINS_SECRET}
+      - JENKINS_AGENT_NAME=docker-agent
+      
+  registry:
+    image: registry:2
+    container_name: docker-registry
+    ports:
+      - "5000:5000"
+    volumes:
+      - registry_data:/var/lib/registry
+
+volumes:
+  jenkins_home:
+  registry_data:

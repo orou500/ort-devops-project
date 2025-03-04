@@ -1,0 +1,17 @@
+.LoginPage {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    transition: background-color 0.25s ease-in-out;
+    color: var(--primary-text-color);
+    height: 100vh;
+}
+
+.login-body {
+    height: 100%;
+    width: 100%;
+    padding-top: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

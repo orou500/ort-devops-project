@@ -1,0 +1,103 @@
+.create-fake-user-page {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    transition: background-color 0.25s ease-in-out;
+    color: var(--primary-text-color);
+    min-height: 100vh;
+}
+
+.create-fake-user-body {
+    direction: rtl;
+    height: 100%;
+    padding-top: 10vh;
+    padding-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container Styles */
+.create-fake-user-body .container-fake-user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f3f4f6;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Style */
+.create-fake-user-body .title-fake-user {
+    color: var(--primary-text-color);
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Error Message Style */
+.create-fake-user-body .error-message {
+    color: #ff4d4f;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Form and Input Wrapper */
+.create-fake-user-body .form-fake-user {
+    width: 100%;
+}
+
+.create-fake-user-body .input-wrapper-fake-user {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label Style */
+.create-fake-user-body .label-fake-user {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+/* Input and Select Styles */
+.create-fake-user-body .input-fake-user {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border 0.2s;
+}
+
+.create-fake-user-body .input-fake-user:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Submit Button */
+.create-fake-user-body .submit-button-fake-user {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.create-fake-user-body .submit-button-fake-user:hover {
+    background-color: #0056b3;
+}
+
+.create-fake-user-body .submit-button-fake-user:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+

@@ -1,0 +1,100 @@
+.league-tournaments {
+    margin-top: 2rem;
+  }
+  
+.league-tournaments h2 {
+    font-size: clamp(7px, 7vw, 24px);
+    margin-bottom: 1rem;
+  }
+  
+.tournaments-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+  }
+  
+.tournament-card {
+    text-decoration: none;
+    background-color: var(--background-color-navbar);
+    border-radius: 10px;
+    padding: 1rem;
+    flex: 1 1 250px;
+    text-align: center;
+    transition: transform 0.2s ease;
+  }
+
+  .tournament-card a {
+    text-decoration: none;
+  }
+  
+.tournament-card:hover {
+    transform: scale(1.05);
+  }
+  
+.tournament-info {
+    color: var(--primary-text-color);
+  }
+  
+.tournament-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+.tournament-teams {
+    font-size: 0.9rem;
+    color: var(--text-subtle);
+  }
+
+.tournament-date {
+    font-size: 0.9rem;
+    color: var(--text-subtle);
+  }
+
+  .tournament-card .btn {
+    background: var(--background-color-navbar);
+    color: var(--background-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    outline: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 5;
+    width: 100%;
+  }
+  .tournament-card .btn:hover {
+    color: #b3b3b3;
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.18), 0 5px 5px rgba(0, 0, 0, 0.12);
+  }
+  .tournament-card .btn.btn-link {
+    background: var(--foreground-color);
+    color: var(--background-color);
+  }
+  .tournament-card .btn.btn-link:hover {
+    background: var(--foreground-color);
+    color: var(--background-color);
+  }
+  .tournament-card .btn.btn-submit {
+    background: var(--foreground-color);
+    color: var(--background-color);
+  }
+  .tournament-card .btn.btn-submit:hover {
+    background: var(--foreground-color-2);
+    color: var(--primary-text-color);
+  }
+  .tournament-card .btn.btn-cancel {
+    background: #CF6679;
+  }
+  .tournament-card .btn.btn-cancel:hover {
+    background: #d2455f;
+    color: var(--primary-text-color);
+  }
+  .tournament-card .btn-box {
+    text-align: center;
+    margin: 50px 0;
+  }

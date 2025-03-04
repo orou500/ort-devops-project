@@ -1,0 +1,13 @@
+.contact a{
+    color: var(--primary-text-color);
+  }
+  
+  .app-title {
+    display: inline-block;
+    position: relative;
+    font-size: clamp(6px, 8vw, 25px);
+    background-image: linear-gradient(to left, var(--foreground-color), var(--foreground-color-2)); /* הגרדיאנט */
+    background-size: 100% 3px; /* גודל הקו התחתון */
+    background-position: 0 100%; /* מיקום הקו התחתון */
+    background-repeat: no-repeat; /* לא לחזור על התמונה */
+  }

@@ -1,0 +1,43 @@
+.leagues-page {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    transition: background-color 0.25s ease-in-out;
+    color: var(--primary-text-color);
+}
+
+.leagues-page-body {
+    direction: rtl;
+    height: 100%;
+    width: 100%;
+    padding-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.leagues-continer {
+    direction: rtl;
+    padding-top: 5vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-bottom: 5vh;
+    display: flex;
+    align-items: start; 
+    justify-content: center;
+    flex-wrap: wrap; 
+    align-content: stretch;
+    height: 100%;
+    width: 100%;
+    gap: 1vw;
+}
+
+@media (max-width: 768px) {
+    .leagues-continer {
+      flex-direction: column; /* עובר לעמודה במסכים קטנים */
+      align-items: center;    /* מרכז את הפריטים באמצע */
+      padding-left: 3vw;      /* התאמת מרווחים למסכים קטנים */
+      padding-right: 3vw;
+    }
+  }

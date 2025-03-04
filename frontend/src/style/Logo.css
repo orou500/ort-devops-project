@@ -1,0 +1,27 @@
+.logo-continer{
+    position: fixed;
+    width: 100vw;
+    z-index: 50;
+    height: 10vh;
+}
+
+.logo {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 2vw;
+    top: 30px;
+    color: var(--primary-text-color);
+    font-size: clamp(4px, 7vw, 20px);
+    text-decoration: none;
+    mix-blend-mode: difference;
+}
+
+.marker-blue {
+    color: var(--foreground-color);
+  }
+  
+  .marker-pink {
+    color: var(--foreground-color-2);
+  }

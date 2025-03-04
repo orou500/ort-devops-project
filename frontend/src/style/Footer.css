@@ -1,0 +1,111 @@
+.logo-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: clamp(6px, 8vw, 25px);
+    color: var(--primary-text-color);
+}
+
+.footer-distributed{
+    background-color: var( --background-color-navbar );
+	box-sizing: border-box;
+	width: 100%;
+	text-align: center;
+	font: bold 16px sans-serif;
+	padding-top: 5%;
+    padding-bottom: 5%;
+    transition: background-color 0.25s ease-in-out;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block !important;
+	vertical-align: top !important;
+}
+
+/* Footer left */
+
+.footer-distributed h3 span{
+	color:  #049A5B;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-company-name{
+    font-family: BrotherSignature;
+	color: var(--nav-links-color);
+	font-weight: normal;
+	margin: 0;
+    font-size: clamp(7px, 5vw, 18px);
+}
+
+.footer-social {
+    font-size: clamp(30px, 7vw, 40px);
+    color: var(--nav-links-color);
+}
+
+.footer-social:hover{
+    color: var(--active-link);
+}
+
+/* Footer Center */
+
+p .footer-company-name:hover {
+	color: var(--active-link);
+	cursor: pointer;
+}
+
+.icons-social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2%;
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+}
+
+.down-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.down-links li {
+   list-style: none; 
+}
+
+.down-links li a {
+    display: block;
+    text-decoration: none;
+    color: var(--nav-links-color);
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.down-links li a:not(.active):hover {
+    background-color: var( --active-link );
+    color: var(--background-color);
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+    .down-links {
+        display: flex;
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+}

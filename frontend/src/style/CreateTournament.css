@@ -1,0 +1,100 @@
+
+.create-tournament-page {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    transition: background-color 0.25s ease-in-out;
+    color: var(--primary-text-color);
+}
+
+.create-tournament-body {
+    direction: rtl;
+    height: 100%;
+    width: 100%;
+    padding-top: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-tournament-container {
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 2vh 0vw;
+    color: #333;
+}
+
+.create-tournament-users-list {
+    margin-bottom: 2vh;
+}
+
+.create-tournament-container h2 {
+    text-align: center;
+    color: #333;
+}
+
+.create-tournament-container label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.create-tournament-container .input-create-tournament {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+.create-tournament-container .last-btn {
+    margin-top: 1vh;
+}
+
+.create-tournament-container .btn-create-tournament {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.create-tournament-container .btn-create-tournament:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+}
+
+.create-tournament-container .button-modern {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .button-modern:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 14px rgba(0, 123, 255, 0.5);
+  }
+  
+  .button-modern:active {
+    background-color: #00448f;
+    transform: translateY(2px);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+  }

@@ -1,0 +1,44 @@
+.league-users {
+    margin-top: 2rem;
+  }
+  
+.league-users h2 {
+    font-size: clamp(7px, 7vw, 24px);
+    margin-bottom: 1rem;
+  }
+  
+.users-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+  }
+  
+.user-card {
+    text-decoration: none;
+    background-color: var(--background-color-navbar);
+    border-radius: 10px;
+    padding: 1rem;
+    flex: 1 1 100px;
+    text-align: center;
+    transition: transform 0.2s ease;
+  }
+  
+.user-card:hover {
+    transform: scale(1.05);
+  }
+  
+.user-info {
+    color: var(--primary-text-color);
+  }
+  
+.user-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+.user-email {
+    font-size: 0.9rem;
+    color: var(--text-subtle);
+  }

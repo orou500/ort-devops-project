@@ -1,0 +1,41 @@
+.player-goals-table {
+    background-color: #1e1e1e; /* רקע כהה */
+    border-radius: 8px; /* פינות מעוגלות */
+    padding: 20px;
+    margin: 20px 0;
+    direction: rtl; /* יישור מימין לשמאל */
+}
+
+.player-goals-table h3 {
+    color: #ffffff; /* צבע טקסט לבן */
+    margin-bottom: 15px;
+}
+
+.player-goals-table table {
+    width: 100%;
+    border-collapse: collapse; /* לבטל גבולות כפולים */
+}
+
+.player-goals-table th, .player-goals-table td {
+    padding: 12px; /* רווח פנימי */
+    text-align: right; /* יישור טקסט לימין */
+}
+
+.player-goals-table th {
+    background-color: #2a2a2a; /* רקע הכותרת */
+    color: #ffffff; /* צבע טקסט לבן */
+    border-bottom: 2px solid #444; /* גבול תחתון כהה */
+}
+
+.player-goals-table tr:nth-child(even) {
+    background-color: #3a3a3a; /* צבע שורות זוגיות */
+}
+
+.player-goals-table tr:hover {
+    background-color: #4a4a4a; /* צבע על-hover */
+}
+
+.player-goals-table td {
+    color: #ffffff; /* צבע טקסט לבן */
+    border-bottom: 1px solid #444; /* גבול תחתון לשורות */
+}

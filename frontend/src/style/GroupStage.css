@@ -1,0 +1,133 @@
+/* עטיפת הבתים והמנצחים */
+.groups-container-wrapper {
+  display: flex;
+  flex-direction: column; /* מסדר את הבתים והמנצחים בטור */
+  min-height: 100vh; /* גובה של מסך מלא */
+}
+
+/* עיצוב כללי של הבתים */
+.groups-container {
+  display: flex;
+  flex-wrap: wrap; /* מאפשר להחזיר שורות במקרה של חוסר מקום */
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: center; /* ממקם את הבתים במרכז */
+  padding: 10px;
+  flex-grow: 1; /* מאפשר לבתים לתפוס את המקום הזמין */
+}
+
+/* קלף של בית */
+.group-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0; /* שינוי גוון גבול */
+  border-radius: 12px; /* פינות רכות יותר */
+  padding: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 300px; /* מגבלת רוחב עבור קלף */
+}
+
+/* כותרת של בית */
+.group-title {
+  font-size: 22px; /* הגדלת גודל הפונט */
+  color: #333333;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-transform: uppercase; /* הופך את הטקסט לאותיות גדולות */
+}
+
+/* רשימת קבוצות */
+.group-teams {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #555;
+  font-size: 16px;
+}
+
+.group-teams li {
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  transition: background-color 0.2s;
+}
+
+.group-teams li:hover {
+  background-color: #f0f0f0; /* שינוי צבע רקע בלחיצה */
+}
+
+.group-teams .no-teams {
+  font-style: italic;
+  color: #999;
+  margin-top: 10px;
+}
+
+/* כפתורים */
+.groups-container button {
+  background-color: var(--foreground-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 14px;
+}
+
+.groups-container .red-button {
+  background-color: var(--dangerous-color);
+}
+
+/* בחירת משתמש */
+.groups-container select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #333;
+  margin-top: 15px;
+  transition: border-color 0.2s;
+}
+
+.groups-container select:hover {
+  border-color: var(--foreground-color); /* הדגשה כאשר העכבר מעל */
+}
+
+/* הצגת מנצחים */
+.winners {
+  margin-top: auto; /* מבטיח שהמנצחים ימוקמו בתחתית */
+  text-align: center; /* מיושר למרכז */
+  padding: 20px;
+}
+
+.winners h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #e0e0e0;
+}
+
+.winners ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.winners li {
+  font-size: 16px;
+  color: #e0e0e0;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+.total-points {
+  color: #333;
+}

@@ -1,0 +1,61 @@
+/* TermsOfService.css */
+.terms-page {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    transition: background-color 0.25s ease-in-out;
+    color: var(--primary-text-color);
+}
+
+.terms-body {
+    direction: rtl;
+    height: 100%;
+    padding-top: 10vh;
+    padding-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.terms-container {
+    max-width: 800px; /* רוחב מקסימלי לקונטיינר */
+    margin: 20px auto; /* מרכז את הקונטיינר */
+    padding: 20px; /* ריווח פנימי */
+    background-color: #f9f9f9; /* צבע רקע בהיר */
+    border-radius: 8px; /* פינות מעוגלות */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* הצללה רכה */
+    font-family: Arial, sans-serif; /* גופן כללי */
+  }
+  
+  .terms-container h1 {
+    font-size: 2rem; /* גודל כותרת ראשית */
+    color: #333; /* צבע כהה לכותרת */
+    text-align: center; /* מרכז את הכותרת */
+    margin-bottom: 20px; /* ריווח תחתון */
+  }
+  
+  .terms-container h2 {
+    font-size: 1.5rem; /* גודל כותרת משנה */
+    color: #007bff; /* צבע כחול לכותרות משנה */
+    margin-top: 20px; /* ריווח עליון */
+    margin-bottom: 10px; /* ריווח תחתון */
+  }
+  
+  .terms-container p {
+    font-size: 1rem; /* גודל טקסט רגיל */
+    color: #555; /* צבע כהה לטקסט */
+    line-height: 1.6; /* רווח בין השורות */
+    margin-bottom: 15px; /* ריווח תחתון בין פסקאות */
+  }
+  
+  .terms-container a {
+    color: #007bff; /* צבע כחול לקישורים */
+    text-decoration: none; /* ללא קו תחתון */
+  }
+  
+  .terms-container a:hover {
+    text-decoration: underline; /* קו תחתון כשמחזיקים על הקישור */
+  }
+  

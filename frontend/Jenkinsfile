@@ -1,0 +1,57 @@
+pipeline {
+    agent any
+
+    parameters {
+        string(name: 'REACT_APP_BACKEND_URL_DEV', defaultValue: 'http://sizex.work.gd:30100', description: 'backend url')
+    }
+
+    stages {
+        stage('Verify Tools') {
+            steps {
+                sh 'docker --version'
+            }
+        }
+
+        stage('Clean Up') {
+            steps {
+                script {
+                    // Clean up Docker resources
+                    sh "docker rm -f flm-app-container || true"
+                    sh '''
+                    imageName="localhost:5000/flm-app"
+                    images=$(docker images -q $imageName)
+
+                    if [ -z "$images" ]; then
+                        echo "Image $imageName not found, skipping."
+                    else
+                        docker rmi -f $images
+                    fi
+                    '''
+                }
+            }
+        }
+        
+        stage('Docker Build') {
+            steps {
+                sh """
+                    docker build \
+                    --build-arg REACT_APP_BACKEND_URL_DEV='${params.REACT_APP_BACKEND_URL_DEV}' \
+                    -t localhost:5000/flm-app .
+                """
+                sh 'docker push localhost:5000/flm-app'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline succeeded!'
+        }
+        failure {
+            echo 'Pipeline failed!'
+        }
+        always {
+            cleanWs()
+        }
+    }
+}

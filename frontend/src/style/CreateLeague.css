@@ -1,0 +1,163 @@
+.create-league {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    transition: background-color 0.25s ease-in-out;
+    color: var(--primary-text-color);
+}
+
+.create-league-body {
+    direction: rtl;
+    height: 100%;
+    width: 100%;
+    padding-top: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*form*/
+
+.league-form {
+    width: 90vw;
+    margin: 45px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .league-form .league-title {
+    font-size: clamp(6px, 8vw, 25px);;
+    text-align: center;
+    color: var(--foreground-color);
+  }
+  .league-form hr.sep {
+    background: var(--foreground-color-2);
+    box-shadow: none;
+    border: none;
+    height: 2px;
+    width: 100%;
+    margin: 0px auto 45px auto;
+  }
+  .league-form .group {
+    position: relative;
+    margin-bottom: 45px;
+  }
+
+  .league-form .group-info{
+    display: flex;
+  }
+
+  .league-form .league-textarea {
+    resize: none;
+  }
+  .league-form input, .league-textarea {
+    background: none;
+    color: var(--primary-text-color);
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 60vw;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid var(--primary-text-color);
+  }
+  .league-form input:focus, .league-textarea:focus {
+    outline: none;
+  }
+  .league-form input:focus ~ .league-label, .league-textarea:focus ~ .league-label, input:valid ~ .league-label, .league-textarea:valid ~ label {
+    top: -14px;
+    font-size: 12px;
+    color: var(--foreground-color);
+  }
+  .league-form input:focus ~ .bar:before, .league-textarea:focus ~ .bar:before {
+    width: 60vw;
+  }
+  .league-form input[type="password"] {
+    letter-spacing: 0.3em;
+  }
+  .league-form .league-label {
+    color: var(--primary-text-color);
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    top: 10px;
+    transition: 300ms ease all;
+  }
+  .league-form .bar {
+    position: relative;
+    display: block;
+    width: 60vw;
+  }
+  .league-form .bar:before {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 0px;
+    position: absolute;
+    background: var(--foreground-color);
+    transition: 300ms ease all;
+    left: 0%;
+  }
+  .league-form .btn {
+    background: var(--background-color-navbar);
+    color: var(--background-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    outline: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  .league-form .btn:hover {
+    color: #b3b3b3;
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.18), 0 5px 5px rgba(0, 0, 0, 0.12);
+  }
+  .league-form .btn.btn-link {
+    background: var(--foreground-color);
+    color: var(--background-color);
+  }
+  .league-form .btn.btn-link:hover {
+    background: var(--foreground-color);
+    color: var(--background-color);
+  }
+  .league-form .btn.btn-submit {
+    background: var(--foreground-color);
+    color: var(--background-color);
+  }
+  .league-form .btn.btn-submit:hover {
+    background: var(--foreground-color-2);
+    color: var(--primary-text-color);
+  }
+  .league-form .btn.btn-cancel {
+    background: var(--background-color-navbar);
+  }
+  .league-form .btn.btn-cancel:hover {
+    background: var(--dangerous-color);
+    color: var(--primary-text-color);
+  }
+  .league-form .btn-box {
+    text-align: center;
+    margin: 50px 0;
+  }
+
+
+
+  @media (max-width: 768px) {
+    .league-form input, .league-textarea {
+        width: 90vw;
+    }
+
+    .league-form input:focus ~ .bar:before, .league-textarea:focus ~ .bar:before {
+        width: 90vw;
+    }
+
+    .league-form .bar {
+        width: 90vw;
+    }
+  }
+

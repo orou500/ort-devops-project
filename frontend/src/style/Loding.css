@@ -1,0 +1,52 @@
+.content-seketon {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+    background-color: var(--background-color);
+    justify-content: center;
+}
+
+.skeleton-loader-title {
+    width: 80%;
+    height: 30px;
+    display: block;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.5) 50%,
+        rgba(255, 255, 255, 0) 80%
+      ),
+      lightgray;
+    background-repeat: repeat-y;
+    background-size: 50px 500px;
+    background-position: 0 0;
+    animation: shine 1s infinite;
+    margin: 3vh 5vw;
+    border-radius: 5px;
+  }
+
+.skeleton-loader {
+    width: 50%;
+    height: 15px;
+    display: block;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.5) 50%,
+        rgba(255, 255, 255, 0) 80%
+      ),
+      lightgray;
+    background-repeat: repeat-y;
+    background-size: 50px 500px;
+    background-position: 0 0;
+    animation: shine 1s infinite;
+    margin: 1vh 5vw;
+    border-radius: 5px;
+  }
+  @keyframes shine {
+    to {
+      background-position: 100% 0, 0 0;
+    }
+  }

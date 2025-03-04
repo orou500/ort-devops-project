@@ -1,0 +1,162 @@
+/* מכולה ראשית עבור הטורניר */
+.tournament-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* ממרכז את המכולה */
+  color: #ffffff; /* צבע טקסט לבן */
+  padding: 20px;
+  width: 100vw; /* משתמש בכל רוחב החלון */
+  min-height: 100vh; /* גובה מינימלי של כל הדף */
+  box-sizing: border-box; /* מבטיח שה-padding לא יגדיל את האלמנט מעבר ל-100vw */
+}
+
+.tournament-container h2, .tournament-container h3 {
+  color: var(--foreground-color); /* צבע כותרות */
+}
+
+.tournament-container input,
+.tournament-container select {
+  background-color: var(--background-color-navbar);
+  color: var(--primary-text-color);
+  border: none;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 250px; /* מקסימום רוחב עבור שדות קלט */
+  max-height: 30px;
+}
+
+.tournament-container .add-match {
+  background-color: var(--foreground-color);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  margin: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  max-width: 200px; /* מקסימום רוחב עבור הכפתור */
+}
+
+.tournament-container .add-match:hover {
+  background-color: var(--foreground-color-2);
+}
+
+/* טבלת טורניר נוקאאוט */
+.tournament-bracket {
+  display: flex;
+  justify-content: center; /* מרכז את כל התוכן */
+  flex-wrap: wrap; /* מאפשר שבירה לשורות במכשירים קטנים */
+  width: 100%;
+  padding: 20px;
+}
+
+.round {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  flex-basis: calc(25% - 20px); /* מאפשר התאמה אוטומטית לחלוקת מסך */
+}
+
+.round h4 {
+  margin-bottom: 10px;
+  color: var(--foreground-color-2);
+}
+
+.match {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; /* מרווח בין הקבוצות והכפתור */
+  margin-bottom: 40px;
+  background-color: var(--background-color-navbar);
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  position: relative;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team span {
+  margin-bottom: 5px;
+  color: var(--primary-text-color);
+}
+
+input[readonly] {
+  background-color: transparent;
+  border: none;
+  color: var(--primary-text-color);
+  text-align: center;
+  font-weight: bold;
+  width: 80px;
+}
+
+.vs {
+  margin: 0 10px;
+  color: var(--primary-text-color);
+}
+
+/* כפתור מחיקה */
+.delete-match-button {
+  background-color: #ff1744 !important;
+  color: white !important;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+  width: 100%; /* לוקח את כל רוחב המשחק */
+  max-width: 120px;
+}
+
+.delete-match-button:hover {
+  background-color: #d50000 !important; /* גוון כהה יותר לאפקט ריחוף */
+}
+
+/* סגנונות רספונסיביים */
+@media screen and (max-width: 768px) {
+
+  .round {
+    flex-basis: 100%; /* כל שלב יתפוס את כל הרוחב */
+  }
+
+  .match {
+    max-width: 100%; /* מאפשר התאמה למסכים קטנים */
+  }
+
+  .delete-match-button {
+    max-width: 120px !important;
+  }
+
+  .tournament-container input,
+  .tournament-container select,
+  .tournament-container .add-match {
+    max-width: 100%; /* מבטיח שהאלמנטים יתאימו למסכים קטנים */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .round {
+    margin-bottom: 20px; /* יותר ריווח בין השלבים */
+  }
+
+  .match {
+    flex-direction: column; /* מתאים את התצוגה בצורה אנכית במכשירים קטנים מאוד */
+    width: 100%;
+  }
+
+  .vs {
+    margin: 10px 0;
+  }
+}

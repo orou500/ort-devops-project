@@ -1,0 +1,108 @@
+.edit-profile-page {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    transition: background-color 0.25s ease-in-out;
+    color: var(--primary-text-color);
+    min-height: 100vh;
+}
+
+.edit-profile-body {
+    direction: rtl;
+    height: 100%;
+    padding-top: 10vh;
+    padding-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.edit-profile-continer {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+.edit-profile-continer h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #222222;
+}
+
+.edit-profile-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333333;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #888888;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.save-button, .cancel-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.save-button {
+    background-color: #007BFF;
+    color: #ffffff;
+}
+
+.save-button:hover {
+    background-color: #0069D9;
+}
+
+.cancel-button {
+    background-color: #e0e0e0;
+    color: #ffffff;
+}
+
+.cancel-button:hover {
+    background-color: #cccccc;
+}
+
+.error-message {
+    color: #ff4444;
+    margin-bottom: 10px;
+    text-align: center;
+}

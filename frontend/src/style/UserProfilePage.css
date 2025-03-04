@@ -1,0 +1,129 @@
+.user-profile-page {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  transition: background-color 0.25s ease-in-out;
+  color: var(--primary-text-color);
+  }
+  
+  .user-profile-body {
+    direction: rtl;
+    height: 100%;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .profile-container {
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    padding: 40px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.profile-header {
+    margin-bottom: 20px;
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.profile-info p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #b3b3b3;
+}
+
+.profile-info strong {
+    color: #fff;
+}
+
+.profile-actions {
+    margin-top: 20px;
+}
+
+.edit-profile-button {
+    display: inline-block;
+    background-color: var(--foreground-color-2);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.edit-profile-button:hover {
+    background-color: #303f9f;
+}
+
+.profile-stats {
+    background-color: var(--background-color-navbar); /* צבע רקע נעים */
+    padding: 15px; /* מרווח פנימי */
+    border-radius: 12px; /* פינות עגולות */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* צל לתחושת עומק */
+    margin-top: 20px; /* רווח מלמעלה */
+}
+
+.profile-stats .first-place {
+    color: var(--gold-color);
+}
+.profile-stats .second-place {
+    color: var(--silver-color);
+}
+.profile-stats .kog {
+    color: var(--bronze-color);
+}
+.profile-stats .koa {
+    color: var(--copper-color);
+}
+
+.profile-stats p {
+    font-size: 1.1rem; /* גודל טקסט מעט גדול יותר */
+    margin: 10px 0; /* רווחים בין האלמנטים */
+    color: var(--primary-text-color); /* צבע טקסט משתנה לפי ערכת הנושא */
+    font-weight: 500; /* הופך את הטקסט לקצת יותר מודגש */
+}
+
+.profile-stats p strong {
+    color: var(--primary-text-color);
+}
+
+.profile-stats p:first-child {
+    margin-top: 0; /* מסיר רווח עליון מהאלמנט הראשון */
+}
+
+.profile-stats-box {
+    background: linear-gradient(135deg, var(--foreground-color), var(--foreground-color-2));
+    padding: 20px;
+    margin-top: 1vh;
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1rem; /* גודל טקסט מעט גדול יותר */
+    margin: 10px 0; /* רווחים בין האלמנטים */
+    color: var(--primary-text-color); /* צבע טקסט משתנה לפי ערכת הנושא */
+    font-weight: 500; /* הופך את הטקסט לקצת יותר מודגש */
+  }
+
+/* עיצוב רספונסיבי */
+@media (max-width: 768px) {
+    .profile-stats {
+        padding: 10px; /* מקטין את הריווח למסכים קטנים יותר */
+        font-size: 1rem; /* מקטין מעט את גודל הפונט */
+    }
+}

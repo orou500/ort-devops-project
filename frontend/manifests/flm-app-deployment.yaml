@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flm-app
+  namespace: flm-app
+spec:
+  selector:
+    matchLabels:
+      app: flm-app
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: flm-app
+    spec:
+      containers:
+        - name: flm-app
+          image: localhost:5000/flm-app:latest
+          ports:
+            - containerPort: 3000

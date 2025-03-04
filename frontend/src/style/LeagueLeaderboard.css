@@ -1,0 +1,128 @@
+/* עיצוב מודרני לטבלת הדירוג */
+.leaderboard-center {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.leaderboard-container {
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.leaderboard-title {
+    text-align: center;
+    font-size: clamp(7px, 7vw, 24px);
+    color: var(--primary-text-color);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.leaderboard-table thead {
+    background-color: var(--foreground-color-2);
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.leaderboard-table th, .leaderboard-table td {
+    padding: 15px;
+    align-self: center;
+    text-align: center;
+}
+
+.leaderboard-table th {
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.leaderboard-table tbody tr {
+    background-color: var(--background-color-navbar);
+    transition: background-color 0.3s ease;
+}
+
+.leaderboard-table tbody tr:hover {
+    background-color: #e9e9f0;
+    text-shadow: 1px 1px 2px white;
+    color: black;
+}
+
+.leaderboard-table tbody td {
+    border-bottom: 1px solid #ddd;
+    font-size: 1.2rem;
+}
+
+.leaderboard-table tbody tr.first-place {
+    background-color: #ffe082;
+    text-shadow: 1px 1px 2px black;
+    font-weight: 600;
+}
+
+/* עיצוב רספונסיבי */
+@media (max-width: 768px) {
+    .leaderboard-table th, .leaderboard-table td, .leaderboard-table tbody td {
+        padding: 8px;
+        font-size: 1rem;
+    }
+
+    .leaderboard-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .leaderboard-container {
+        padding: 10px;
+    }
+
+    .leaderboard-title {
+        font-size: 1.5rem;
+    }
+
+    .leaderboard-table th, .leaderboard-table td, .leaderboard-table tbody td {
+        padding: 5px;
+        font-size: 0.9rem;
+    }
+}
+
+/* עוד הקטנה למסכים קטנים מאוד */
+@media (max-width: 580px) {
+    .leaderboard-container {
+        padding: 5px;
+    }
+
+    .leaderboard-title {
+        font-size: 1.2rem;
+    }
+
+    .leaderboard-table th, .leaderboard-table td, .leaderboard-table tbody td {
+        padding: 3px;
+        font-size: 0.75rem; /* גודל טקסט קטן יותר */
+    }
+}
+
+/* התאמה מיוחדת למסכים כמו Galaxy Z Fold (יחס רוחב גדול) */
+@media (max-width: 380px) {
+    .leaderboard-container {
+        padding: 3px;
+    }
+
+    .leaderboard-title {
+        font-size: 1rem; /* מקטין את הכותרת עוד יותר */
+    }
+
+    .leaderboard-table th, .leaderboard-table td, .leaderboard-table tbody td {
+        padding: 2px;
+        font-size: 0.65rem; /* גודל טקסט מינימלי */
+    }
+}
