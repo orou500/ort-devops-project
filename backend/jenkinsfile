@@ -1,0 +1,64 @@
+pipeline {
+    agent any
+
+    parameters {
+        string(name: 'BASE_URL_DEV', defaultValue: 'http://localhost:3010', description: 'backend url')
+    }
+
+    environment {
+        AUTH_SECRET     = credentials('AUTH_SECRET')
+        DB_PASS = credentials('DB_PASS')
+        DB_USER = credentials('DB_USER')
+        DB_URL_DEV = credentials('DB_URL_DEV')
+        JWT_KEY = credentials('JWT_KEY')
+        REFRESH_TOKEN_KEY = credentials('REFRESH_TOKEN_KEY')
+        MAIL_PASS = credentials('MAIL_PASS')
+        MAIL_USER = credentials('MAIL_USER')
+        MAIL_USER2 = credentials('MAIL_USER2')
+        MAIL_PASS2 = credentials('MAIL_PASS2')
+        GOOGLE_CLIENT_ID = credentials('GOOGLE_CLIENT_ID')
+        GOOGLE_CLIENT_SECRET = credentials('GOOGLE_CLIENT_SECRET')
+        SESSION_SECRET = credentials('SESSION_SECRET')
+    }
+
+    stages {
+        stage('Clean Up') {
+            steps {
+                script {
+                    sh "docker rm -f user-service-container || true"
+                    sh '''
+                    imageName="localhost:5000/user-service"
+                    images=$(docker images -q $imageName)
+
+                    if [ -z "$images" ]; then
+                        echo "Image $imageName not found, skipping."
+                    else
+                        docker rmi -f $images
+                    fi
+                    '''
+                }
+            }
+        }
+
+        stage('Verify Docker Installation') {
+            steps {
+                script {
+                    sh 'docker --version'
+                }
+            }
+        }
+
+        stage('Build and Push Docker Image') {
+            steps {
+                script {
+                    sh """
+                    docker build -t localhost:5000/user-service .
+                    """
+                    
+                    // Push the image to registry
+                    sh 'docker push localhost:5000/user-service'
+                }
+            }
+        }
+    }
+}

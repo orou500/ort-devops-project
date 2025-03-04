@@ -1,0 +1,98 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-service
+  namespace: user-service
+spec:
+  selector:
+    matchLabels:
+      app: user-service
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: user-service
+    spec:
+      containers:
+        - name: user-service
+          image: localhost:5000/user-service:latest
+          ports:
+            - containerPort: 3010
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+            requests:
+              cpu: "200m"
+              memory: "256Mi"
+          env:
+            - name: BASE_URL_DEV
+              valueFrom:
+                configMapKeyRef:
+                  name: backend-cm
+                  key: BASE_URL_DEV
+            - name: AUTH_SECRET
+              valueFrom:
+                configMapKeyRef:
+                  name: backend-cm
+                  key: AUTH_SECRET
+            - name: DB_PASS
+              valueFrom:
+                configMapKeyRef:
+                  name: backend-cm
+                  key: DB_PASS
+            - name: DB_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: backend-cm
+                  key: DB_USER
+            - name: DB_URL_DEV
+              valueFrom:
+                configMapKeyRef:
+                  name: backend-cm
+                  key: DB_URL_DEV
+            - name: JWT_KEY
+              valueFrom:
+                configMapKeyRef:
+                  name: backend-cm
+                  key: JWT_KEY
+            - name: REFRESH_TOKEN_KEY
+              valueFrom:
+                configMapKeyRef:
+                  name: backend-cm
+                  key: REFRESH_TOKEN_KEY
+            - name: MAIL_PASS
+              valueFrom:
+                configMapKeyRef:
+                  name: backend-cm
+                  key: MAIL_PASS
+            - name: MAIL_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: backend-cm
+                  key: MAIL_USER
+            - name: MAIL_USER2
+              valueFrom:
+                configMapKeyRef:
+                  name: backend-cm
+                  key: MAIL_USER2
+            - name: MAIL_PASS2
+              valueFrom:
+                configMapKeyRef:
+                  name: backend-cm
+                  key: MAIL_PASS2
+            - name: GOOGLE_CLIENT_ID
+              valueFrom:
+                configMapKeyRef:
+                  name: backend-cm
+                  key: GOOGLE_CLIENT_ID
+            - name: GOOGLE_CLIENT_SECRET
+              valueFrom:
+                configMapKeyRef:
+                  name: backend-cm
+                  key: GOOGLE_CLIENT_SECRET
+            - name: SESSION_SECRET
+              valueFrom:
+                configMapKeyRef:
+                  name: backend-cm
+                  key: SESSION_SECRET
