@@ -37,7 +37,43 @@ curl -sfL https://get.k3s.io | sh -
 sudo kubectl get nodes
 ```
 
-### 3. ArgoCD Installation
+### 3. Istio Installation
+```bash
+# Download Istio
+curl -L https://istio.io/downloadIstio | sh -
+
+# Move to Istio directory (replace X.Y.Z with actual version)
+cd istio-X.Y.Z
+
+# Add istioctl to PATH
+export PATH=$PWD/bin:$PATH
+
+# Install Istio with demo profile
+istioctl install --set profile=demo -y
+
+# Enable automatic sidecar injection for default namespace
+kubectl label namespace default istio-injection=enabled
+
+# Verify installation
+kubectl get pods -n istio-system
+```
+
+### 4. Kiali Installation
+```bash
+# Install Kiali and other addons
+kubectl apply -f samples/addons/kiali.yaml
+kubectl apply -f samples/addons/prometheus.yaml
+kubectl apply -f samples/addons/grafana.yaml
+kubectl apply -f samples/addons/jaeger.yaml
+
+# Wait for deployments to be ready
+kubectl wait --for=condition=available --timeout=600s deployment/kiali -n istio-system
+
+# Access Kiali dashboard (in a separate terminal)
+istioctl dashboard kiali
+```
+
+### 5. ArgoCD Installation
 ```bash
 # Create namespace for ArgoCD
 kubectl create namespace argocd
@@ -55,7 +91,7 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 ```
 
-### 4. ArgoCD Configuration
+### 6. ArgoCD Configuration
 1. Access ArgoCD UI at `https://localhost:8080`
 2. Login with:
    - Username: admin
@@ -74,7 +110,7 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
      - Destination: https://kubernetes.default.svc
      - Namespace: your-namespace
 
-### 5. Monitoring Stack Installation
+### 7. Monitoring Stack Installation
 
 #### Install Helm (if not installed)
 ```bash
@@ -219,7 +255,15 @@ kubectl create configmap backend-cm --from-env-file=.env -n $NAMESPACE
 kubectl get configmaps
 ```
 
-Make sure the ArgoCD Applications Synced
+Make sure the ArgoCD Applications Synced and the Deployment manifest in the appliction with the env have:
+```bash
+          env:
+            - name: YOUR_KEY
+              valueFrom:
+                configMapKeyRef:
+                  name: backend-cm ## This is the name of the ConfigMap
+                  key: YOUR_KEY
+```
 
 ### Important URLs
 - Jenkins: `http://localhost:8081`
@@ -231,6 +275,7 @@ Make sure the ArgoCD Applications Synced
 - Prometheus: `http://localhost:9090`
 - Grafana NodePort: `http://localhost:30300`
 - Prometheus NodePort: `http://localhost:30090`
+- Kiali Dashboard: `http://localhost:20001`
 
 ### Troubleshooting
 1. If Docker agent fails to connect:
@@ -258,6 +303,18 @@ kubectl get pods -n monitoring | grep loki
 kubectl get pods -n monitoring | grep grafana
 ```
 
+### Service Mesh Verification
+```bash
+# Check Istio components
+kubectl get pods -n istio-system
+
+# Verify Kiali and addons
+kubectl get pods -n istio-system -l app=kiali
+kubectl get pods -n istio-system -l app=prometheus
+kubectl get pods -n istio-system -l app=grafana
+kubectl get pods -n istio-system -l app=jaeger
+```
+
 ### Troubleshooting Monitoring
 1. If Prometheus fails to scrape:
    - Check ServiceMonitor configurations
@@ -270,3 +327,12 @@ kubectl get pods -n monitoring | grep grafana
 3. If Grafana can't connect to data sources:
    - Check data source URLs
    - Verify network policies
+
+### Troubleshooting Service Mesh
+1. If sidecars are not injecting:
+   - Verify namespace label: `kubectl get ns -L istio-injection`
+   - Restart pods if needed: `kubectl rollout restart deployment <deployment-name>`
+
+2. If Kiali shows no data:
+   - Check Prometheus connection
+   - Verify service mesh metrics are being collected
